@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        #dynamicElement {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="title">Welcome to JavaScript DOM Manipulation</h1>
+    </header>
+
+    <section>
+        <p id="paragraph">Click the button below to change this text and style.</p>
+        <button onclick="changeText()">Change Text & Style</button>
+    </section>
+
+    <section>
+        <button onclick="toggleElement()">Show/Hide Element</button>
+        <div id="dynamicElement">Hello! I am a dynamically toggled element.</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Promise</p>
+    </footer>
+
+    <script>
+        function changeText() {
+            let paragraph = document.getElementById("paragraph");
+            paragraph.textContent = "The text has been changed!";
+            paragraph.classList.toggle("highlight");
+        }
+
+        function toggleElement() {
+            let element = document.getElementById("dynamicElement");
+            element.style.display = element.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
